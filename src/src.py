@@ -21,7 +21,7 @@ def freq_shark_country(attacks):
     freq_country.drop(4, inplace=True)
 
     # Merging the above Data Frames and includinf coordinates for each country
-    coord = pd.read_csv('countries_codes_and_coordinates.csv', delimiter='"')
+    coord = pd.read_csv('data/countries_codes_and_coordinates.csv', delimiter='"')
     coord = coord[['Alpha-2 code', 'Latitude (average)', 'Longitude (average)']]
     coord.columns = ['Country_Code', 'Latitude', 'Longitude']
     freq_country = pd.merge(freq_country, coord, on=['Country_Code'], how = 'inner')
